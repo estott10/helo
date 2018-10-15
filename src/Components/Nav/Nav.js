@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
+import {updateProfile, updateUsername} from '../../ducks/reducer';
 
 function Nav(props) {
     // if(props.history.location.pathname === "/"){
@@ -15,7 +16,7 @@ function Nav(props) {
             <Link to="/dashboard">
                 <button>Home</button>
             </Link>
-            <Link to="/post/:postid">
+            <Link to="/new">
                 <button>New Post</button>
             </Link>
             <Link to="/">
@@ -33,4 +34,4 @@ function mapStateToProps(props){
   }
 }
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, {updateProfile, updateUsername})(Nav);

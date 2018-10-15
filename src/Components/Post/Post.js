@@ -12,20 +12,22 @@ export default class Post extends Component{
           profile_pic: '',
           post_author: ''
         }
- 
+    this.componentDidMount=this.componentDidMount.bind(this);
      }
 
      //post title, image, and content for that post, as well as the username and profile picture of the post author 
  
      componentDidMount(){
-         axios.get(`/api/post/${this.props.match.params}`)
+        const { match: {params} } = this.props;
+
+         axios.get(`/api/post/${params.postid}`)
             .then(res => {
                 this.setState({
-                postTitle: res.data.title,
-                postImage: res.data.img,
-                postContent: res.data.content,
-                profile_pic: res.data.profile_pic,
-                post_author: res.data.username
+                postTitle: res.data[0].title,
+                postImage: res.data[0].img,
+                postContent: res.data[0].content,
+                profile_pic: res.data[0].profile_pic,
+                post_author: res.data[0].username
                 });
             })
      }
@@ -37,7 +39,7 @@ export default class Post extends Component{
                 <img alt="postImg" src={this.state.postImage} />
                 <div>{this.state.postContent}</div>
                 <div>{this.state.post_author}</div>
-                <div>{this.state.profile_pic}</div>
+                <img alt="post_proilepic" src={this.state.profile_pic}/>
             </div>
         )
     }

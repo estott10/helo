@@ -6,7 +6,7 @@ module.exports={
 
         dbInstance.register_user(username, password)
             .then(result => {
-                res.sendStatus(200);
+              res.sendStatus(200);
             }).catch(err => {
                 res.status(500).send( {errorMessage:'Failed to Register User'});
                 console.log(err);
@@ -19,7 +19,7 @@ module.exports={
 
         dbInstance.login_user(username, password)
           .then(result => {
-              res.status(200).send(result)
+              res.status(200).send(result);
           }).catch( err => { res.status(500).send( {errorMessage: 'Failed to Login User'});
               console.log(err);
             })
@@ -39,10 +39,22 @@ module.exports={
 
     getSinglePost: (req, res, next) => {
         const dbInstance = req.app.get('db');
-        console.log(this.props.match.params)
-        dbInstance.get_onePost(req.params.postid)
+  
+        dbInstance.get_onepost(req.params.postid)
             .then( result => {
                 res.status(200).send(result)
+            }).catch( err => { res.status(500).send( {errorMessage: 'Failed to Retrieve Posts'} );
+                console.log(err); 
+            })            
+    },
+    createPost: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+        const {title, img, content} = req.body;
+        const {userid} = req.params;
+  
+        dbInstance.create_post(title, img, content, userid)
+            .then( result => {
+                res.sendStatus(200)
             }).catch( err => { res.status(500).send( {errorMessage: 'Failed to Retrieve Posts'} );
                 console.log(err); 
             })            

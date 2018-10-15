@@ -86,7 +86,7 @@ class Dashboard extends Component{
                   {this.state.listOfPosts.map( (post, i) =>{
                     // <Post title={post.title} author={post.username} content={post.content} image={post.img} authorPic={post.profile_pic}/>
                       return <ul className="postList" key={i}> 
-                        <div><Link to={`/post/${post.id}`} >{post.title}></Link></div>
+                        <div><Link to={`/post/${post.id}`} >{post.title}</Link></div>
                         <div>{post.username}</div> <img alt="post-dashUserPic" src={post.profile_pic}/>
                      </ul>
                 } )}
