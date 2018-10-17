@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Post from '../Post/Post';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
@@ -77,20 +76,22 @@ class Dashboard extends Component{
     render(){
 
         return(
-            <div>Dashboard
+            <div className="dashboard">
+                <div className="searchSection" >
+                <div>Search</div>
                 <input name='title' onChange= {this.handleChange}></input>
                 <button onClick={this.getPostResults}>Search</button>
                 <button onClick={this.resetSearch}>Reset</button>
                 My Posts<input type='checkbox' name='myPosts' value= {this.state.userPosts} />
-                
+                </div>
+                <div className= "dashposts">
                   {this.state.listOfPosts.map( (post, i) =>{
-                    // <Post title={post.title} author={post.username} content={post.content} image={post.img} authorPic={post.profile_pic}/>
                       return <ul className="postList" key={i}> 
-                        <div><Link to={`/post/${post.id}`} >{post.title}</Link></div>
-                        <div>{post.username}</div> <img alt="post-dashUserPic" src={post.profile_pic}/>
+                        <div><Link className="links" to={`/post/${post.id}`} >{post.title}</Link></div>
+                       <div className="postComp"><div className="dashUsername">by {post.username}</div> <img alt="post-dashUserPic" src={post.profile_pic}/></div>
                      </ul>
                 } )}
-               
+               </div>
             </div>
         )
     }

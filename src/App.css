@@ -1,32 +1,139 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+html{
+  background: linear-gradient(90deg, #ff70A6, #ff9770,#FFD670, #E9FF70);
+  box-sizing: border-box; 
   }
-  to {
-    transform: rotate(360deg);
+  
+  .auth {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 425px;
+    height: 350px;
+    margin-top: 200px;
+    margin-left: 600px;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
   }
-}
+
+  .App{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: white;
+    min-width: 100%;
+    min-height: 100vh;
+  }
+
+  .nav{
+    background: linear-gradient(0deg, #ff70A6, #ff9770);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    height: 100vh;
+    margin-left: 0px;
+  }
+
+
+  .dashboard{
+    background-color: #f2f2f2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .userPic{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+  }
+
+  .postList{
+    background-color: #DEDEDE;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 50px;
+    width: 800px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .postAuthor > img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .postComp > img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .postComp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dashposts{
+    background-color: #DEDEDE;
+    padding: 40px;
+  }
+
+  .links{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+
+  .dashposts > ul{
+    justify-content: space-between;
+  }
+
+  #singlePost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    color: black;
+  }
+
+  .postImg{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  #postTitle{
+    color: #ff9770;
+  }
+
+  #titlepic{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  #usernamePic{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+

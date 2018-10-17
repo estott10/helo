@@ -7,12 +7,11 @@ function Nav(props) {
     // if(props.history.location.pathname === "/"){
     //     return;
     // } else 
-    
-    
+     
     return (
-        <div>
+        <div className="nav">
               <div>{props.username}</div>
-              <div><img alt='profilepic' src={props.profile_pic}/></div>
+              <div className="userPic"><img className="userPic" alt='profilepic' src={props.profile_pic}/></div>
             <Link to="/dashboard">
                 <button>Home</button>
             </Link>

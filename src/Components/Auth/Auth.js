@@ -55,11 +55,19 @@ class Auth extends Component{
 
     render(){
         return(
-            <div>Auth
+            <div className= "auth">Helo
+                <div>
+                Username:
                 <input name='username'  onChange={(e)=> this.updateNamePass(e)}></input>
+                </div>
+                <div>
+                Password:
                 <input name='password' onChange={(e) => this.updateNamePass(e)}></input>
-                <Link to="/dashboard"><button onClick={this.loginUser}>Login</button> </Link>
-                <Link to="/dashboard"><button onClick={this.addUser}>Register</button> </Link>
+                </div>
+                <div className="loginOrRegister">
+                <Link to="/dashboard"><button onClick={this.loginUser}>Login</button></Link>
+                <Link to="/dashboard"><button onClick={this.addUser}>Register</button></Link>
+                </div>
             </div>
         )
     }

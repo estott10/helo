@@ -34,12 +34,16 @@ export default class Post extends Component{
 
     render(props){
         return(
-            <div className="post">
-                <div>{this.state.postTitle}</div>
-                <img alt="postImg" src={this.state.postImage} />
+            <div className="post" id="singlePost">
+               <div id="titlePic">
+                  <div id="postTitle">{this.state.postTitle}</div>
+                  <div className="postImg"><img alt="postImg" src={this.state.postImage} /></div>
+                </div>
                 <div>{this.state.postContent}</div>
-                <div>{this.state.post_author}</div>
-                <img alt="post_proilepic" src={this.state.profile_pic}/>
+                <div id="usernamePic">
+                  <div>by {this.state.post_author}</div>
+                  <div className="postAuthor"><img alt="post_proilepic" src={this.state.profile_pic}/></div>
+                </div>
             </div>
         )
     }
