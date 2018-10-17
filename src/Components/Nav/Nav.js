@@ -4,9 +4,8 @@ import {connect} from 'react-redux';
 import {updateProfile, updateUsername} from '../../ducks/reducer';
 
 function Nav(props) {
-    // if(props.history.location.pathname === "/"){
-    //     return;
-    // } else 
+    // const {location} = props;
+    // if(!(location.pathname === "/")){
      
     return (
         <div className="nav">
@@ -23,8 +22,11 @@ function Nav(props) {
             </Link>
         
         </div>
-    )
-}
+    )} 
+//     else {
+//         return( <div></div>);
+//     }
+// }
 
 function mapStateToProps(props){
   return {
