@@ -17,7 +17,7 @@ class Dashboard extends Component{
        this.resetSearch = this.resetSearch.bind(this);
        this.componentDidMount = this.componentDidMount.bind(this);
        this.getPostResults = this.getPostResults.bind(this);
-
+       this.userPostsUpdate = this.userPostsUpdate.bind(this);
     }
 
     handleChange(e){ 
@@ -31,6 +31,13 @@ class Dashboard extends Component{
         title : ''
         });
       }
+
+    userPostsUpdate(){
+          this.setState({
+              userPosts: !this.state.userPosts
+          });
+      }
+
     
 /// must add '%' to beginning and end of title search in axios request!!
 // if userPosts is false... then id ===id... else ... id === 0
@@ -71,7 +78,7 @@ class Dashboard extends Component{
         })
     }
 }
-//reset search fields...
+
 
     render(){
 
@@ -79,10 +86,10 @@ class Dashboard extends Component{
             <div className="dashboard">
                 <div className="searchSection" >
                 <div>Search</div>
-                <input name='title' onChange= {this.handleChange}></input>
+                <input id="myInput" name='title' onChange= {this.handleChange}></input>
                 <button onClick={this.getPostResults}>Search</button>
-                <button onClick={this.resetSearch}>Reset</button>
-                My Posts<input type='checkbox' name='myPosts' value= {this.state.userPosts} />
+                <button onClick={() => {this.resetSearch();(document.getElementById('myInput').value = '')}}>Reset</button>
+                My Posts<input type='checkbox' id="postCheck" name='myPosts' defaultChecked={this.state.userPosts} onClick={this.userPostsUpdate} />
                 </div>
                 <div className= "dashposts">
                   {this.state.listOfPosts.map( (post, i) =>{
